@@ -24,11 +24,13 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "expect": "^1.14.0",
+    "file-loader": "^0.8.5",
     "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
     "react-addons-test-utils": "^0.14.7",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.13"
   }
 }
