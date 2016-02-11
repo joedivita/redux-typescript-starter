@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/js/app/main.js',
+  entry: './src/app/js/main.js',
   output: {
     path: './dist',
     filename: 'bundle.js',
@@ -11,6 +11,10 @@ module.exports = {
   },
   module: {
     loaders: [
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,

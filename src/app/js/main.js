@@ -1,3 +1,4 @@
+import '../styles/app.scss';
 import { hashHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
