@@ -9,6 +9,9 @@ module.exports = {
     inline: true,
     contentBase: './dist'
   },
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.ts', '.tsx',]
+  },
   module: {
     loaders: [
       { test: /\.sass$/, loaders: ['style', 'css', 'sass?indentedSyntax'] },
@@ -26,6 +29,15 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'ts-loader'
+      },
+      {
+        test: /\.json/,
+        loader: 'json-loader'
       }
     ]
   }

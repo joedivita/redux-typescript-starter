@@ -1,11 +1,6 @@
-import '../styles/app.sass';
-import { hashHistory } from 'react-router';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router } from 'react-router';
-import routes from './config/routes';
-
-ReactDOM.render(
-  <Router history={hashHistory}>{routes}</Router>,
-  document.getElementById('main')
-);
+"use strict";
+require('../styles/app.sass');
+var React = require('react');
+var ReactDOM = require('react-dom');
+ReactDOM.render(React.createElement("h1", null, "HELLO"), document.getElementById('main'));
+//# sourceMappingURL=main.js.map
