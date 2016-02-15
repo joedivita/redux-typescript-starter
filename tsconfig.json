@@ -4,7 +4,21 @@
     "target": "es5",
     "sourceMap": true
   },
-  "exclude": [
-    "node_modules/"
-  ]
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**"
+  ],
+  "files": [
+    "typings/react-router/history.d.ts",
+    "typings/react-router/react-router.d.ts",
+    "typings/react/react-dom.d.ts",
+    "typings/react/react.d.ts",
+    "src/app/js/components/MainLayout/MainLayout.tsx",
+    "src/app/js/config/routes.tsx",
+    "src/app/js/main.tsx"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
