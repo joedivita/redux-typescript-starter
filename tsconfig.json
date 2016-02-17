@@ -7,7 +7,8 @@
   "filesGlob": [
     "**/*.ts",
     "**/*.tsx",
-    "!node_modules/**"
+    "!node_modules/**",
+    "node_modules/immutable/dist/immutable.d.ts"
   ],
   "files": [
     "src/app/js/modules/Foo/actions/fooAction.ts",
@@ -23,6 +24,7 @@
     "typings/jsdom/jsdom.d.ts",
     "typings/mocha/mocha.d.ts",
     "typings/node/node.d.ts",
+    "typings/react-redux/react-redux.d.ts",
     "typings/react-router/history.d.ts",
     "typings/react-router/react-router.d.ts",
     "typings/react/react-addons-test-utils.d.ts",
@@ -34,7 +36,8 @@
     "src/app/js/components/MainLayout/MainLayout.tsx",
     "src/app/js/config/routes.tsx",
     "src/app/js/main.tsx",
-    "src/test/components/MainLayout/MainLayout.spec.tsx"
+    "src/test/components/MainLayout/MainLayout.spec.tsx",
+    "node_modules/immutable/dist/immutable.d.ts"
   ],
   "atom": {
     "rewriteTsconfig": true
