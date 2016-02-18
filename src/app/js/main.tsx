@@ -6,7 +6,7 @@ import { hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { Store, createStore, applyMiddleware, compose } from 'redux';
 import * as thunk from 'redux-thunk';
-import { Map } from 'immutable';
+import { List } from 'immutable';
 import { rootReducer } from './modules/reducers';
 import { routes } from './config/routes';
 import * as promiseMiddleware from 'redux-promise-middleware';
@@ -24,7 +24,7 @@ const middlewares: Array<Redux.Middleware> = [
 ];
 
 // Set initial state
-const initialState = Map();
+const initialState = {}
 
 // Create store
 const store = compose(applyMiddleware(...middlewares), devTools)(createStore)

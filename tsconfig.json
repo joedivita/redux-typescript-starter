@@ -8,7 +8,8 @@
     "**/*.ts",
     "**/*.tsx",
     "!node_modules/**",
-    "node_modules/immutable/dist/immutable.d.ts"
+    "node_modules/immutable/dist/immutable.d.ts",
+    "node_modules/axios/axios.d.ts"
   ],
   "files": [
     "src/app/js/modules/Items/actions/itemActions.ts",
@@ -41,7 +42,8 @@
     "src/app/js/containers/Page.tsx",
     "src/app/js/main.tsx",
     "src/test/components/MainLayout/MainLayout.spec.tsx",
-    "node_modules/immutable/dist/immutable.d.ts"
+    "node_modules/immutable/dist/immutable.d.ts",
+    "node_modules/axios/axios.d.ts"
   ],
   "atom": {
     "rewriteTsconfig": true

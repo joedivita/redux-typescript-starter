@@ -1,8 +1,13 @@
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 import itemsReducer from './Items/reducers/index';
+import { ItemsState } from './Items/reducers/index';
+
+export interface ApplicationState {
+  itemsState: ItemsState
+}
 
 const rootReducer = combineReducers({
-  items: itemsReducer
+  itemsState: itemsReducer
 });
 
 export { rootReducer }

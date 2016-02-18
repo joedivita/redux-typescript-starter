@@ -2,24 +2,31 @@ import * as React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as ItemActions from '../modules/Items/actions/itemActions';
-import * as Immutable from 'immutable';
+import { Map, List } from 'immutable';
 import { MainLayout } from '../components/MainLayout';
+import { ApplicationState } from '../modules/reducers';
 
 interface Props {
   items: Immutable.List<string>
+  loading: boolean
   dispatch: Dispatch
 }
 
 class Page extends React.Component<Props, any> {
   private actions = bindActionCreators(ItemActions, this.props.dispatch)
 
-  handleClick() {
+  handleClick(): void {
     this.actions.addItem();
   }
 
-  render() {
+  componentDidMount(): void {
+    this.actions.getItems();
+  }
+
+  render(): JSX.Element {
     return (
       <MainLayout
+        loading={this.props.loading}
         items={this.props.items}
         clickHeader={() => this.handleClick()}
       />
@@ -27,15 +34,11 @@ class Page extends React.Component<Props, any> {
   }
 }
 
-const mapStateToProps = (state: Immutable.Map<string, any>) => {
-  const itemsState: Immutable.Map<string, any> = state.get('items');
+const mapStateToProps = (state: ApplicationState) => {
   return {
-    items: itemsState.get('items')
+    items:    state.itemsState.items,
+    loading:  state.itemsState.loading
   };
 };
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(ItemActions, dispatch);
-}
 
 export default connect(mapStateToProps)(Page);
