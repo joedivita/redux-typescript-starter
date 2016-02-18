@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import * as ItemActions from '../../modules/Items/actions/itemActions';
+import * as ItemActions from '../modules/Items/actions/itemActions';
 import * as Immutable from 'immutable';
+import { MainLayout } from '../components/MainLayout';
 
 interface Props {
   items: Immutable.List<string>
   dispatch: Dispatch
 }
 
-interface State {}
-
-export class MainLayout extends React.Component<Props, State> {
+class Page extends React.Component<Props, any> {
   private actions = bindActionCreators(ItemActions, this.props.dispatch)
 
   handleClick() {
@@ -20,25 +19,23 @@ export class MainLayout extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
-        <h1 onClick={() => this.handleClick()}>
-          Items:
-        </h1>
-        <ul>
-          {this.props.items.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
+      <MainLayout
+        items={this.props.items}
+        clickHeader={() => this.handleClick()}
+      />
     )
   }
 }
 
-const mapStateToItems = (state: Immutable.Map<string, any>) => {
+const mapStateToProps = (state: Immutable.Map<string, any>) => {
   const itemsState: Immutable.Map<string, any> = state.get('items');
   return {
     items: itemsState.get('items')
   };
 };
 
-export default connect(mapStateToItems)(MainLayout);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ItemActions, dispatch);
+}
+
+export default connect(mapStateToProps)(Page);

@@ -36,8 +36,9 @@
     "typings/redux-thunk/redux-thunk.d.ts",
     "typings/redux/redux.d.ts",
     "typings/require/require.d.ts",
-    "src/app/js/components/MainLayout/MainLayout.tsx",
+    "src/app/js/components/MainLayout.tsx",
     "src/app/js/config/routes.tsx",
+    "src/app/js/containers/Page.tsx",
     "src/app/js/main.tsx",
     "src/test/components/MainLayout/MainLayout.spec.tsx",
     "node_modules/immutable/dist/immutable.d.ts"

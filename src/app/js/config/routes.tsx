@@ -1,9 +1,9 @@
 import * as React from 'react';
-import MainLayout from '../components/MainLayout/MainLayout';
+import Page from '../containers/Page';
 import { Route, IndexRoute } from 'react-router';
 
 const routes = (
-  <Route path="/" component={MainLayout}>
+  <Route path="/" component={Page}>
   </Route>
 );
 
