@@ -11,7 +11,7 @@ interface Props {
 
 interface State {}
 
-class MainLayout extends React.Component<Props, State> {
+export class MainLayout extends React.Component<Props, State> {
   private actions = bindActionCreators(FooActions, this.props.dispatch)
 
   handleClick() {
@@ -27,8 +27,8 @@ class MainLayout extends React.Component<Props, State> {
   }
 }
 
-const mapStateToFoo = ({ foo }) => ({
-  foo: foo
+const mapStateToFoo = (state: Map<string, any>) => ({
+  foo: state.get('foo')
 });
 
 export default connect(mapStateToFoo)(MainLayout);

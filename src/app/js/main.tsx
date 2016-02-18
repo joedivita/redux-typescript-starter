@@ -13,8 +13,9 @@ import { Provider } from 'react-redux';
 
 import { rootReducer } from './modules/reducers';
 import { Store, createStore } from 'redux';
+import { Map } from 'immutable';
 
-const initialState = {};
+const initialState = Map();
 const store: Store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
