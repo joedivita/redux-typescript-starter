@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux-immutable';
-import fooReducer from './Foo/reducers/index';
+import itemsReducer from './Items/reducers/index';
 
 const rootReducer = combineReducers({
-  foo: fooReducer
+  items: itemsReducer
 });
 
 export { rootReducer }

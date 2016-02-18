@@ -11,9 +11,9 @@
     "node_modules/immutable/dist/immutable.d.ts"
   ],
   "files": [
-    "src/app/js/modules/Foo/actions/fooAction.ts",
-    "src/app/js/modules/Foo/constants.ts",
-    "src/app/js/modules/Foo/reducers/index.ts",
+    "src/app/js/modules/Items/actions/itemActions.ts",
+    "src/app/js/modules/Items/constants.ts",
+    "src/app/js/modules/Items/reducers/index.ts",
     "src/app/js/modules/reducers.ts",
     "src/test/hello.spec.ts",
     "src/test/helpers/test_helper.ts",
@@ -32,6 +32,7 @@
     "typings/react/react.d.ts",
     "typings/redux-actions/redux-actions.d.ts",
     "typings/redux-immutable/redux-immutable.d.ts",
+    "typings/redux-thunk/redux-thunk.d.ts",
     "typings/redux/redux.d.ts",
     "typings/require/require.d.ts",
     "src/app/js/components/MainLayout/MainLayout.tsx",
