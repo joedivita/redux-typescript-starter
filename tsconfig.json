@@ -31,6 +31,7 @@
     "typings/react/react-dom.d.ts",
     "typings/react/react.d.ts",
     "typings/redux-actions/redux-actions.d.ts",
+    "typings/redux-immutable/redux-immutable.d.ts",
     "typings/redux/redux.d.ts",
     "typings/require/require.d.ts",
     "src/app/js/components/MainLayout/MainLayout.tsx",
