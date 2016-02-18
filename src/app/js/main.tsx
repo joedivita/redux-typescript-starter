@@ -9,6 +9,7 @@ import * as thunk from 'redux-thunk';
 import { Map } from 'immutable';
 import { rootReducer } from './modules/reducers';
 import { routes } from './config/routes';
+import * as promiseMiddleware from 'redux-promise-middleware';
 
 // Redux Dev Tools
 let devTools = f => f;
@@ -18,7 +19,8 @@ if(window['devToolsExtension']) {
 
 // Middlewares
 const middlewares: Array<Redux.Middleware> = [
-  thunk
+  thunk,
+  promiseMiddleware()
 ];
 
 // Set initial state

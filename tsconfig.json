@@ -32,6 +32,7 @@
     "typings/react/react.d.ts",
     "typings/redux-actions/redux-actions.d.ts",
     "typings/redux-immutable/redux-immutable.d.ts",
+    "typings/redux-promise-middleware/redux-promise-middleware.d.ts",
     "typings/redux-thunk/redux-thunk.d.ts",
     "typings/redux/redux.d.ts",
     "typings/require/require.d.ts",
