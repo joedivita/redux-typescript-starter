@@ -6,7 +6,7 @@ import { ItemsPayload, ItemPayload } from '../definitions/itemsDefinitions';
 const getItems: () => {} = createAction<ItemsPayload>(
   Constants.GET_ITEMS,
   () => ({
-    promise: axios.get('https://github-note-taker-313.firebaseio.com/joedivita.json')
+    promise: axios.get(Constants.GET_ITEMS_URL)
   })
 )
 
