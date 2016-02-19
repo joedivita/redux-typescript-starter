@@ -8,6 +8,13 @@ export interface ItemsPayload {
   statusText?: string
 }
 
+export interface ItemPayload {
+  promise?: axios.Promise
+  data?: string,
+  status?: number,
+  statusText?: string
+}
+
 export interface ItemsState {
   items: List<string>
   loading: boolean

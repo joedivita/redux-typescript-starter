@@ -1,7 +1,7 @@
 import { createAction, Action } from 'redux-actions';
 import * as Constants from '../constants';
 import * as axios from 'axios';
-import { ItemsPayload } from '../definitions/itemsDefinitions';
+import { ItemsPayload, ItemPayload } from '../definitions/itemsDefinitions';
 
 const getItems: () => {} = createAction<ItemsPayload>(
   Constants.GET_ITEMS,
@@ -10,7 +10,7 @@ const getItems: () => {} = createAction<ItemsPayload>(
   })
 )
 
-const addItem: () => {} = createAction<ItemsPayload>(
+const addItem: () => {} = createAction<ItemPayload>(
   Constants.ADD_ITEM
 );
 
