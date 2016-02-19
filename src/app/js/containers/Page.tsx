@@ -23,6 +23,10 @@ class Page extends React.Component<Props, any> {
     this.actions.getItems();
   }
 
+  componentWillReceiveProps(): void {
+    //console.log(this.get())
+  }
+
   render(): JSX.Element {
     return (
       <MainLayout

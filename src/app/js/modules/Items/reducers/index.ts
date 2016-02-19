@@ -6,24 +6,39 @@ import {
   GET_ITEMS_REJECTED,
 } from '../constants';
 import { Map, List } from 'immutable';
-
-export interface ItemsState {
-  items: List<string>
-  loading: boolean
-}
+import { ItemsState, ItemsPayload } from '../definitions/itemsDefinitions';
 
 const initialState: ItemsState = {
   items: List<string>(),
-  loading: false
+  loading: false,
+  error: null
 };
 
 export default handleActions<any>({
 
+  // GET_ITEMS_REJECTED
+  [GET_ITEMS_REJECTED]: (state: ItemsState, action: Action): ItemsState => {
+    const payload: ItemsPayload = action.payload;
+
+    // TODO: Add error into ItemsState
+    return {
+      items: List<string>(),
+      loading: false,
+      error: {
+        code: payload.status,
+        message: payload.statusText
+      }
+    }
+  },
+
   // GET_ITEMS_FULFILLED
   [GET_ITEMS_FULFILLED]: (state: ItemsState, action: Action): ItemsState => {
+    const payload: ItemsPayload = action.payload;
+
     return {
-      items: List<string>(action.payload.data),
-      loading: false
+      items: List<string>(payload.data),
+      loading: false,
+      error: null
     };
   },
 
@@ -31,7 +46,8 @@ export default handleActions<any>({
   [GET_ITEMS_PENDING]: (state: ItemsState, action: Action): ItemsState => {
     return {
       items: state.items,
-      loading: true
+      loading: true,
+      error: null
     };
   },
 
@@ -40,7 +56,8 @@ export default handleActions<any>({
     const items = List<string>(state.items);
     return {
       items: items.unshift('Foobar'),
-      loading: false
+      loading: false,
+      error: null
     };
   }
 
