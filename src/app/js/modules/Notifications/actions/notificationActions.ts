@@ -5,12 +5,10 @@ import {
   NotificationPayload
 } from '../definitions/notificationsDefinitions';
 
-const emitNotification = createAction<NotificationPayload>(
+const emitNotification: (NotificationPayload) => {} =
+createAction<NotificationPayload>(
   Constants.EMIT_NOTIFICATION,
-  (type: NotificationType, message: string) => ({
-    type: type,
-    message: message
-  })
+  (NotificationPayload) => (NotificationPayload)
 )
 
 export { emitNotification };
