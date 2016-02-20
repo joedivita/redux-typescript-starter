@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha './src/test/helpers/test_helper.ts' './src/test/**/*.@(ts|tsx)' --compilers ts:ts-node/register",
-    "test:watch": "mocha './src/test/helpers/test_helper.ts' './src/test/**/*.@(ts|tsx)' --compilers ts:ts-node/register --watch"
+    "test": "mocha --require ./src/test/helpers/test_helper.ts './src/test/**/*.ts' --compilers ts:ts-node/register",
+    "test:watch": "mocha --require ./src/test/helpers/test_helper.ts './src/test/**/*.ts' --compilers ts:ts-node/register --watch"
   },
   "author": "",
   "license": "ISC",
@@ -42,7 +42,9 @@
     "react-addons-test-utils": "^0.14.7",
     "redux-mock-store": "0.0.6",
     "sass-loader": "^3.1.2",
+    "sinon": "^1.17.3",
     "style-loader": "^0.13.0",
+    "teaspoon": "^6.1.2",
     "ts-loader": "^0.8.1",
     "ts-node": "^0.5.5",
     "tsd": "^0.6.5",
