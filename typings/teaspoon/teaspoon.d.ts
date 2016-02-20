@@ -21,6 +21,6 @@ declare module 'teaspoon' {
     render: () => Collection
   }
 
-  var $: <T>(element: React.ReactElement<T>) => Selector;
+  var $: (element: React.ReactElement<any>) => Selector;
   export = $;
 }
