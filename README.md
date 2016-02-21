@@ -1,3 +1,9 @@
+### Install Dependencies
+
+```
+$npm install
+```
+
 ### To Run App in Dev Mode
 
 ```
@@ -11,5 +17,5 @@ $npm test
 ### To Run Tests on Changes
 
 ```
-$npm test -- --watch
+$npm run test:watch
 ```
