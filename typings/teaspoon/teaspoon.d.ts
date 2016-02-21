@@ -15,6 +15,7 @@ declare module 'teaspoon' {
     length: number
     map: (mapFunction: (node?: HTMLElement, index?: number, collection?: Collection) => any) => QueryCollection
     trigger: (eventName: string, eventData?: Object) => void
+    children: (selector?: string) => Collection
   }
 
   interface Selector {

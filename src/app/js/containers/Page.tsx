@@ -16,7 +16,7 @@ interface Props {
   error: XhrError
 }
 
-class Page extends React.Component<Props, any> {
+export class Page extends React.Component<Props, any> {
   private itemActions = bindActionCreators(ItemActions, this.props.dispatch)
   private notificationActions = bindActionCreators(NotificationActions, this.props.dispatch)
 
