@@ -27,6 +27,7 @@
     "src/app/js/modules/XhrError/xhrErrorDefinitions.ts",
     "src/test/components/MainLayout.ts",
     "src/test/containers/Page.ts",
+    "src/test/helpers/lint.ts",
     "src/test/helpers/test_helper.ts",
     "src/test/modules/Items/actions/itemsActions.ts",
     "src/test/modules/Items/reducers/itemsReducers.ts",
