@@ -5,12 +5,12 @@ export enum NotificationType {
   ERROR
 }
 
-export interface NotificationPayload {
-  type: NotificationType,
-  message: string
+export interface INotificationPayload {
+  message: string;
+  type: NotificationType;
 }
 
-export interface NotificationState {
-  type: NotificationType
-  message: string
+export interface INotificationState {
+  message: string;
+  type: NotificationType;
 }

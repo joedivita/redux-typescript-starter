@@ -1,4 +1,4 @@
-export interface XhrError {
-  code: number
-  message: string
+export interface IXhrError {
+  code: number;
+  message: string;
 }

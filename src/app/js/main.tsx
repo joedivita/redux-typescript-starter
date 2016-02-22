@@ -13,22 +13,22 @@ import * as promiseMiddleware from 'redux-promise-middleware';
 
 // Redux Dev Tools
 let devTools = f => f;
-if(window['devToolsExtension']) {
-  devTools = window['devToolsExtension']();
+if (window.devToolsExtension) {
+  devTools = window.devToolsExtension();
 }
 
 // Middlewares
 const middlewares: Array<Redux.Middleware> = [
   thunk,
-  promiseMiddleware()
+  promiseMiddleware(),
 ];
 
 // Set initial state
-const initialState = {}
+const initialState = {};
 
 // Create store
-const store = compose(applyMiddleware(...middlewares), devTools)(createStore)
-const finalStore = store(rootReducer, initialState)
+const store = compose(applyMiddleware(...middlewares), devTools)(createStore);
+const finalStore = store(rootReducer, initialState);
 
 // Render the application
 ReactDOM.render(

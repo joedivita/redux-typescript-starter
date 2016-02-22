@@ -2,13 +2,13 @@ import { createAction, Action } from 'redux-actions';
 import * as Constants from '../constants';
 import {
   NotificationType,
-  NotificationPayload
+  INotificationPayload,
 } from '../definitions/notificationsDefinitions';
 
 const emitNotification: (NotificationPayload) => {} =
-createAction<NotificationPayload>(
+createAction<INotificationPayload>(
   Constants.EMIT_NOTIFICATION,
   (NotificationPayload) => (NotificationPayload)
-)
+);
 
 export { emitNotification };

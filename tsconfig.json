@@ -1,4 +1,7 @@
 {
+  "rules": {
+    "semicolon": true
+  },
   "compilerOptions": {
     "jsx": "react",
     "target": "es5",
@@ -38,6 +41,7 @@
     "typings/mocha/mocha.d.ts",
     "typings/nock/nock.d.ts",
     "typings/node/node.d.ts",
+    "typings/react-dev-tools-extension/react-dev-tools-extension.d.ts",
     "typings/react-redux/react-redux.d.ts",
     "typings/react-router/history.d.ts",
     "typings/react-router/react-router.d.ts",

@@ -344,6 +344,10 @@ declare module NodeJS {
         unescape: (str: string) => string;
         gc: () => void;
         v8debug?: any;
+        document: any;
+        window: any;
+        navigator: any;
+        HTMLElement: any;
     }
 
     export interface Timer {

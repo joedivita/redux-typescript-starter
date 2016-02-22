@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect } from 'chai';
 import * as React from 'react';
 import { MainLayout } from '../../app/js/components/MainLayout';
 import { List } from 'immutable';
@@ -8,16 +8,16 @@ import { spy } from 'sinon';
 let props = {
   clickHeader: spy(),
   items: List<string>(),
-  loading: false
+  loading: false,
 };
 
-describe('Main Layout Component', function() {
+describe('Main Layout Component', () => {
   describe('Loading is false', () => {
     beforeEach(() => {
       props = {
         clickHeader: spy(),
         items: List<string>(['Foo', 'Bar', 'Baz']),
-        loading: false
+        loading: false,
       };
     });
 
@@ -64,7 +64,7 @@ describe('Main Layout Component', function() {
       props = {
         clickHeader: spy(),
         items: List<string>(['Foo', 'Bar', 'Baz']),
-        loading: true
+        loading: true,
       };
     });
 

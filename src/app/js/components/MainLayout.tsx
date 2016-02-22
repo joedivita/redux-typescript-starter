@@ -1,17 +1,14 @@
 import * as React from 'react';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import * as ItemActions from '../modules/Items/actions/itemActions';
 import { List } from 'immutable';
 
-interface Props {
-  items: List<string>
-  clickHeader: () => void
-  loading: boolean
+interface IProps {
+  items: List<string>;
+  loading: boolean;
+  clickHeader: () => void;
 }
 
-class MainLayout extends React.Component<Props, any> {
-  renderListView() {
+class MainLayout extends React.Component<IProps, any> {
+  renderListView(): JSX.Element {
     return (
       <div>
         <h1 onClick={this.props.clickHeader}>
@@ -26,13 +23,13 @@ class MainLayout extends React.Component<Props, any> {
     );
   }
 
-  renderLoadingView() {
+  renderLoadingView(): JSX.Element {
     return (
       <h1>Loading...</h1>
     );
   }
 
-  renderView() {
+  renderView(): JSX.Element {
     if (this.props.loading) {
       return this.renderLoadingView();
     }
@@ -41,7 +38,7 @@ class MainLayout extends React.Component<Props, any> {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return this.renderView();
   }
 }

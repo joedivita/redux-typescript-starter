@@ -1,17 +1,17 @@
 import { combineReducers } from 'redux';
 import itemsReducer from './Items/reducers/index';
 import notificationsReducer from './Notifications/reducers/index';
-import { ItemsState } from './Items/definitions/itemsDefinitions';
-import { NotificationState } from './Notifications/definitions/notificationsDefinitions';
+import { IItemsState } from './Items/definitions/itemsDefinitions';
+import { INotificationState } from './Notifications/definitions/notificationsDefinitions';
 
-export interface ApplicationState {
-  itemsState: ItemsState,
-  notificationState: NotificationState
+export interface IApplicationState {
+  itemsState: IItemsState;
+  notificationState: INotificationState;
 }
 
 const rootReducer = combineReducers({
   itemsState: itemsReducer,
-  notificationsState: notificationsReducer
+  notificationsState: notificationsReducer,
 });
 
 export { rootReducer }

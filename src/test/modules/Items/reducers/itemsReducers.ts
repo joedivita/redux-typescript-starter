@@ -7,45 +7,45 @@ import { List } from 'immutable';
 describe('Items reducer', () => {
   it('returns the proper initial state', () => {
     const expectedState = {
+      error: null,
       items: List<string>(),
       loading: false,
-      error: null
     };
     const initialState = reducer(undefined, { type: 'undefined' });
     expect(initialState).to.deep.equal(expectedState);
   });
 
-  it('sets state for GET_ITEMS_FULFILLED', () =>{
+  it('sets state for GET_ITEMS_FULFILLED', () => {
     const payload = {
-      data: ['One', 'Two', 'Three']
+      data: ['One', 'Two', 'Three'],
     };
     const expectedState = {
+      error: null,
       items: List<string>(payload.data),
       loading: false,
-      error: null
     };
     const newState = reducer(undefined, {
+      payload: payload,
       type: types.GET_ITEMS_FULFILLED,
-      payload: payload
     });
     expect(newState).to.deep.equal(expectedState);
   });
 
-  it('sets state for GET_ITEMS_PENDING', () =>{
+  it('sets state for GET_ITEMS_PENDING', () => {
     const list = ['One', 'Two', 'Three'];
     const initialState = {
+      error: null,
       items: List<string>(list),
       loading: false,
-      error: null
     };
     const newState = reducer(initialState, {
-      type: types.GET_ITEMS_PENDING
+      type: types.GET_ITEMS_PENDING,
     });
     const expectedState = {
+      error: null,
       items: initialState.items,
       loading: true,
-      error: null
-    }
+    };
     expect(newState).to.deep.equal(expectedState);
   });
 });

@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect } from 'chai';
 import * as React from 'react';
 import { Page } from '../../app/js/containers/Page';
 import ConnectedPage from '../../app/js/containers/Page';
@@ -10,22 +10,23 @@ import * as ItemTypes from '../../app/js/modules/Items/constants';
 import * as NotificationTypes from '../../app/js/modules/Notifications/constants';
 import { NotificationType } from '../../app/js/modules/Notifications/definitions/notificationsDefinitions';
 import { Provider } from 'react-redux';
+import { IItemsState } from '../../app/js/modules/Items/definitions/itemsDefinitions';
 
 let generateMockStore = (dispatch) => ({
-  getState: () => ({
+  dispatch: dispatch,
+  getReducer: spy(),
+  getState: (): { itemsState: IItemsState } => ({
     itemsState: {
+      error: { code: 0, message: '' },
       items: List<string>(['Foo', 'Bar']),
       loading: false,
-      error: { code: 0, message: '' }
-    }
+    },
   }),
-  getReducer: spy(),
   replaceReducer: spy(),
-  dispatch: dispatch,
-  subscribe: spy()
+  subscribe: spy(),
 });
 
-describe('Main Layout Component', function() {
+describe('Main Layout Component', () => {
   describe('#mapStateToProps', () => {
     it('properly maps itemsState properties', () => {
       // Arrange
@@ -40,10 +41,10 @@ describe('Main Layout Component', function() {
       // Act
       const actual = $(provider).render().children()['0'].renderedElement.props;
       const expected = {
+        dispatch: dispatchSpy,
+        error: { code: 0, message: '' },
         items: List<string>(['Foo', 'Bar']),
         loading: false,
-        error: { code: 0, message: '' },
-        dispatch: dispatchSpy
       };
 
       // Assert
@@ -53,13 +54,13 @@ describe('Main Layout Component', function() {
 
   describe('#render', () => {
     let props = {
-      items: List<string>(['Foo', 'Bar']),
-      loading: true,
       dispatch: spy(),
       error: {
         code: 0,
-        message: ''
-      }
+        message: '',
+      },
+      items: List<string>(['Foo', 'Bar']),
+      loading: true,
     };
 
     beforeEach(() => {
@@ -85,7 +86,7 @@ describe('Main Layout Component', function() {
 
       // Act
       const actual = childElement['0'].props.loading;
-      const expected = true
+      const expected = true;
 
       // Assert
       expect(actual).to.equal(expected);
@@ -125,25 +126,25 @@ describe('Main Layout Component', function() {
       it('emits an emitNotfication action', () => {
         // Arrange
         let props = {
-          items: List<string>(['Foo', 'Bar']),
-          loading: true,
           dispatch: spy(),
           error: {
             code: 0,
-            message: ''
-          }
-        }
+            message: '',
+          },
+          items: List<string>(['Foo', 'Bar']),
+          loading: true,
+        };
         const page = new Page(props);
 
         // Act
         props.error = { code: 400, message: 'An error occurred' };
         const expectedAction = {
-          type: NotificationTypes.EMIT_NOTIFICATION,
           payload: {
             message: 'My error message',
-            type: NotificationType.ERROR
-          }
-        }
+            type: NotificationType.ERROR,
+          },
+          type: NotificationTypes.EMIT_NOTIFICATION,
+        };
         page.componentWillReceiveProps(props);
 
         // Assert
@@ -156,14 +157,14 @@ describe('Main Layout Component', function() {
       it('does not emit an emitNotfication action', () => {
         // Arrange
         let props = {
-          items: List<string>(['Foo', 'Bar']),
-          loading: true,
           dispatch: spy(),
           error: {
             code: 0,
-            message: ''
-          }
-        }
+            message: '',
+          },
+          items: List<string>(['Foo', 'Bar']),
+          loading: true,
+        };
         const page = new Page(props);
 
         // Act
@@ -179,20 +180,20 @@ describe('Main Layout Component', function() {
     it('triggers the GET_ITEMS action', () => {
       // Arrange
       let props = {
-        items: List<string>(['Foo', 'Bar']),
-        loading: true,
         dispatch: spy(),
         error: {
           code: 0,
-          message: ''
-        }
+          message: '',
+        },
+        items: List<string>(['Foo', 'Bar']),
+        loading: true,
       };
       const element = React.createElement(Page, props);
 
       // Act
       const expectedAction = {
+        payload: { promise: {}},
         type: ItemTypes.GET_ITEMS,
-        payload: { promise: {}}
       };
       $(element).render();
 
@@ -206,13 +207,13 @@ describe('Main Layout Component', function() {
     it('triggers the ADD_ITEM action', () => {
       // Arrange
       const props = {
-        items: List<string>(['Foo', 'Bar']),
-        loading: true,
         dispatch: spy(),
         error: {
           code: 0,
-          message: ''
-        }
+          message: '',
+        },
+        items: List<string>(['Foo', 'Bar']),
+        loading: true,
       };
       const page = new Page(props);
 

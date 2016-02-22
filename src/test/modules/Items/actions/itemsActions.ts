@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect } from 'chai';
 import * as actions from '../../../../app/js/modules/Items/actions/itemActions';
 import * as types from '../../../../app/js/modules/Items/constants';
 import * as configureMockStore from 'redux-mock-store';
@@ -18,7 +18,7 @@ describe('Item actions', () => {
     nock(types.GET_ITEMS_URL).get('').reply(200, [
       'Foo',
       'Bar',
-      'Baz'
+      'Baz',
     ]);
     const pendingAction = (incomingAction) => {
       expect(incomingAction.type).to.equal(types.GET_ITEMS_PENDING);
@@ -29,5 +29,5 @@ describe('Item actions', () => {
     };
     const store = mockStore(undefined, [pendingAction, successAction], done);
     store.dispatch(actions.getItems());
-  })
+  });
 });

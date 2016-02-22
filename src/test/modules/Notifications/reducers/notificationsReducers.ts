@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect } from 'chai';
 import reducer from '../../../../app/js/modules/Notifications/reducers/index';
 import * as types from '../../../../app/js/modules/Notifications/constants';
 import * as definitions from '../../../../app/js/modules/Notifications/constants';
@@ -11,12 +11,12 @@ describe('Notifications reducer', () => {
 
   it('sets state properly on EMIT_NOTIFICATION', () => {
     const actionPayload = {
-      type: types.EMIT_NOTIFICATION,
       payload: {
+        message: 'Message',
         type: 1,
-        message: 'Message'
-      }
-    }
+      },
+      type: types.EMIT_NOTIFICATION,
+    };
     const newState = reducer(null, actionPayload);
     expect(newState).to.deep.equal(actionPayload.payload);
   });

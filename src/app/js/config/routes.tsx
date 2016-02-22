@@ -3,7 +3,7 @@ import Page from '../containers/Page';
 import { Route, IndexRoute } from 'react-router';
 
 const routes = (
-  <Route path="/" component={Page}>
+  <Route path='/' component={Page}>
   </Route>
 );
 

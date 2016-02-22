@@ -5,20 +5,20 @@ import * as ItemActions from '../modules/Items/actions/itemActions';
 import * as NotificationActions from '../modules/Notifications/actions/notificationActions';
 import { Map, List } from 'immutable';
 import { MainLayout } from '../components/MainLayout';
-import { ApplicationState } from '../modules/reducers';
-import { XhrError } from '../modules/XhrError/xhrErrorDefinitions';
+import { IApplicationState } from '../modules/reducers';
+import { IXhrError } from '../modules/XhrError/xhrErrorDefinitions';
 import { NotificationType } from '../modules/Notifications/definitions/notificationsDefinitions';
 
-interface Props {
-  items: Immutable.List<string>
-  loading: boolean
-  dispatch: Dispatch
-  error: XhrError
+interface IProps {
+  items: Immutable.List<string>;
+  loading: boolean;
+  dispatch: Dispatch;
+  error: IXhrError;
 }
 
-export class Page extends React.Component<Props, any> {
-  private itemActions = bindActionCreators(ItemActions, this.props.dispatch)
-  private notificationActions = bindActionCreators(NotificationActions, this.props.dispatch)
+export class Page extends React.Component<IProps, any> {
+  private itemActions = bindActionCreators(ItemActions, this.props.dispatch);
+  private notificationActions = bindActionCreators(NotificationActions, this.props.dispatch);
 
   handleClick(): void {
     this.itemActions.addItem();
@@ -28,12 +28,12 @@ export class Page extends React.Component<Props, any> {
     this.itemActions.getItems();
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps: IProps): void {
     if (nextProps.error && nextProps.error.code >= 400) {
       this.notificationActions.emitNotification({
+        message: 'My error message',
         type: NotificationType.ERROR,
-        message: 'My error message'
-      })
+      });
     }
   }
 
@@ -44,15 +44,15 @@ export class Page extends React.Component<Props, any> {
         items={this.props.items}
         clickHeader={() => this.handleClick()}
       />
-    )
+    );
   }
 }
 
-const mapStateToProps = (state: ApplicationState) => {
+const mapStateToProps = (state: IApplicationState) => {
   return {
+    error:    state.itemsState.error,
     items:    state.itemsState.items,
     loading:  state.itemsState.loading,
-    error:    state.itemsState.error
   };
 };
 
