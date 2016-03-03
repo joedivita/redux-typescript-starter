@@ -1,10 +1,10 @@
 node_modules
 npm-debug.log
 .DS_Store
-src/app/js/**/*.js
-src/app/js/**/*.js.map
-src/test/**/*.js
-src/test/**/*.map
-src/test/**/*.spec.js
-src/test/**/*.spec.js.map
+src/js/**/*.js
+src/js/**/*.js.map
+test/**/*.js
+test/**/*.map
+test/**/*.spec.js
+test/**/*.spec.js.map
 tmp

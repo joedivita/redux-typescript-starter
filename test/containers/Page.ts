@@ -1,16 +1,16 @@
 import { expect } from 'chai';
 import * as React from 'react';
-import { Page } from '../../app/js/containers/Page';
-import ConnectedPage from '../../app/js/containers/Page';
-import { MainLayout } from '../../app/js/components/MainLayout';
+import { Page } from '../../src/js/containers/Page';
+import ConnectedPage from '../../src/js/containers/Page';
+import { MainLayout } from '../../src/js/components/MainLayout';
 import { List } from 'immutable';
 import * as $ from 'teaspoon';
 import { spy } from 'sinon';
-import * as ItemTypes from '../../app/js/modules/Items/constants';
-import * as NotificationTypes from '../../app/js/modules/Notifications/constants';
-import { NotificationType } from '../../app/js/modules/Notifications/definitions/notificationsDefinitions';
+import * as ItemTypes from '../../src/js/modules/Items/constants';
+import * as NotificationTypes from '../../src/js/modules/Notifications/constants';
+import { NotificationType } from '../../src/js/modules/Notifications/definitions/notificationsDefinitions';
 import { Provider } from 'react-redux';
-import { IItemsState } from '../../app/js/modules/Items/definitions/itemsDefinitions';
+import { IItemsState } from '../../src/js/modules/Items/definitions/itemsDefinitions';
 
 let generateMockStore = (dispatch) => ({
   dispatch: dispatch,

@@ -1,0 +1,4 @@
+--require ./test/helpers/test_helper.ts
+--compilers ts:ts-node/register
+--timeout 15000
+--growl

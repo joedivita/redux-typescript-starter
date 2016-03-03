@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import * as actions from '../../../../app/js/modules/Items/actions/itemActions';
-import * as types from '../../../../app/js/modules/Items/constants';
+import * as actions from '../../../../src/js/modules/Items/actions/itemActions';
+import * as types from '../../../../src/js/modules/Items/constants';
 import * as configureMockStore from 'redux-mock-store';
 import * as thunk from 'redux-thunk';
 import * as promiseMiddleware from 'redux-promise-middleware';

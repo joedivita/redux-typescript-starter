@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import * as actions from '../../../../app/js/modules/Notifications/actions/notificationActions';
-import * as types from '../../../../app/js/modules/Notifications/constants';
+import * as actions from '../../../../src/js/modules/Notifications/actions/notificationActions';
+import * as types from '../../../../src/js/modules/Notifications/constants';
 
 describe('Notification actions', () => {
   it('creates an action to emit a proper notification', () => {

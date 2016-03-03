@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import reducer from '../../../../app/js/modules/Notifications/reducers/index';
-import * as types from '../../../../app/js/modules/Notifications/constants';
-import * as definitions from '../../../../app/js/modules/Notifications/constants';
+import reducer from '../../../../src/js/modules/Notifications/reducers/index';
+import * as types from '../../../../src/js/modules/Notifications/constants';
+import * as definitions from '../../../../src/js/modules/Notifications/constants';
 
 describe('Notifications reducer', () => {
   it('returns the initial state', () => {

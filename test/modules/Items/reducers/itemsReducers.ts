@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import reducer from '../../../../app/js/modules/Items/reducers/index';
-import * as types from '../../../../app/js/modules/Items/constants';
-import * as definitions from '../../../../app/js/modules/Items/constants';
+import reducer from '../../../../src/js/modules/Items/reducers/index';
+import * as types from '../../../../src/js/modules/Items/constants';
+import * as definitions from '../../../../src/js/modules/Items/constants';
 import { List } from 'immutable';
 
 describe('Items reducer', () => {

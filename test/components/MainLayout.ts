@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import * as React from 'react';
-import { MainLayout } from '../../app/js/components/MainLayout';
+import { MainLayout } from '../../src/js/components/MainLayout';
 import { List } from 'immutable';
 import * as $ from 'teaspoon';
 import { spy } from 'sinon';
