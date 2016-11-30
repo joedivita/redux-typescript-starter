@@ -8,3 +8,4 @@ test/**/*.map
 test/**/*.spec.js
 test/**/*.spec.js.map
 tmp
+.git

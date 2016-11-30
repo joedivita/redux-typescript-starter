@@ -3,70 +3,16 @@
     "semicolon": true
   },
   "compilerOptions": {
-    "jsx": "react",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
     "target": "es5",
-    "sourceMap": true
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   },
-  "filesGlob": [
-    "**/*.ts",
-    "**/*.tsx",
-    "!node_modules/**",
-    "node_modules/immutable/dist/immutable.d.ts",
-    "node_modules/axios/axios.d.ts"
-  ],
-  "files": [
-    "src/js/modules/Items/actions/itemActions.ts",
-    "src/js/modules/Items/constants.ts",
-    "src/js/modules/Items/definitions/itemsDefinitions.ts",
-    "src/js/modules/Items/reducers/index.ts",
-    "src/js/modules/Notifications/actions/notificationActions.ts",
-    "src/js/modules/Notifications/constants.ts",
-    "src/js/modules/Notifications/definitions/notificationsDefinitions.ts",
-    "src/js/modules/Notifications/reducers/index.ts",
-    "src/js/modules/reducers.ts",
-    "src/js/modules/XhrError/xhrErrorDefinitions.ts",
-    "test/components/MainLayout.ts",
-    "test/containers/Page.ts",
-    "test/helpers/lint.ts",
-    "test/helpers/test_helper.ts",
-    "test/modules/Items/actions/itemsActions.ts",
-    "test/modules/Items/reducers/itemsReducers.ts",
-    "test/modules/Notifications/actions/notificationsActions.ts",
-    "test/modules/Notifications/reducers/notificationsReducers.ts",
-    "typings/assertion-error/assertion-error.d.ts",
-    "typings/chai/chai-immutable.d.ts",
-    "typings/chai/chai.d.ts",
-    "typings/classnames/classnames.d.ts",
-    "typings/expect/expect.d.ts",
-    "typings/jquery/jquery.d.ts",
-    "typings/jsdom/jsdom.d.ts",
-    "typings/mocha/mocha.d.ts",
-    "typings/nock/nock.d.ts",
-    "typings/node/node.d.ts",
-    "typings/react-dev-tools-extension/react-dev-tools-extension.d.ts",
-    "typings/react-redux/react-redux.d.ts",
-    "typings/react-router/history.d.ts",
-    "typings/react-router/react-router.d.ts",
-    "typings/react/react-addons-test-utils.d.ts",
-    "typings/react/react-dom.d.ts",
-    "typings/react/react.d.ts",
-    "typings/redux-actions/redux-actions.d.ts",
-    "typings/redux-immutable/redux-immutable.d.ts",
-    "typings/redux-mock-store/redux-mock-store.d.ts",
-    "typings/redux-promise-middleware/redux-promise-middleware.d.ts",
-    "typings/redux-thunk/redux-thunk.d.ts",
-    "typings/redux/redux.d.ts",
-    "typings/require/require.d.ts",
-    "typings/sinon/sinon.d.ts",
-    "typings/teaspoon/teaspoon.d.ts",
-    "src/js/components/MainLayout.tsx",
-    "src/js/config/routes.tsx",
-    "src/js/containers/Page.tsx",
-    "src/js/main.tsx",
-    "node_modules/immutable/dist/immutable.d.ts",
-    "node_modules/axios/axios.d.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  }
+  "exclude": [
+    "node_modules"
+  ]
 }

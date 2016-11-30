@@ -1,6 +1,6 @@
 /* WIP */
 
-/// <reference path="../react/react.d.ts"/>
+/// <reference types="react" />
 
 declare module 'teaspoon' {
   import * as React from 'react';

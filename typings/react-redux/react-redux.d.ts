@@ -3,7 +3,8 @@
 // Definitions by: Qubo <https://github.com/tkqubo>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-/// <reference path="../react/react.d.ts" />
+/// <reference types="react" />
+
 /// <reference path="../redux/redux.d.ts" />
 
 declare module "react-redux" {
