@@ -4,7 +4,7 @@ import { Button } from 'antd';
 
 interface IProps {}
 
-class HomeView extends React.Component<IProps, any> {
+class MainView extends React.Component<IProps, any> {
 
   render(): JSX.Element {
     return (
@@ -15,4 +15,4 @@ class HomeView extends React.Component<IProps, any> {
   }
 }
 
-export { HomeView };
+export { MainView };

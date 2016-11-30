@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Home from '../containers/Home';
+import Main from '../containers/Main';
 import { Route, IndexRoute } from 'react-router';
 
 const routes = (
-  <Route path='/' component={Home}>
+  <Route path='/' component={Main}>
   </Route>
 );
 
