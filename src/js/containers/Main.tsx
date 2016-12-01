@@ -5,13 +5,15 @@ import { Map, List } from 'immutable';
 import { MainView } from '../components/MainView';
 import { IApplicationState } from '../modules/reducers';
 
-interface IProps {}
+interface IProps {
+  children: Array<React.Component<any, any>>;
+}
 
 export class Main extends React.Component<IProps, any> {
 
   render(): JSX.Element {
     return (
-      <MainView />
+      <MainView children={this.props.children} />
     );
   }
 }

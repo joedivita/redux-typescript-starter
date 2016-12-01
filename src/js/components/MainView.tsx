@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Header } from './Header';
 import { Aside } from './Aside';
-import { Row, Col } from 'antd';
 
-interface IProps {}
+interface IProps {
+  children: Array<React.Component<any, any>>;
+}
 
 class MainView extends React.Component<IProps, any> {
 
@@ -11,11 +12,10 @@ class MainView extends React.Component<IProps, any> {
     return (
       <div>
         <Header />
-        <Row>
-          <Col xs={{ span: 0 }} md={{ span: 6 }}>
-            <Aside />
-          </Col>
-        </Row>
+        <Aside />
+        <div className='main-content'>
+          {this.props.children}
+        </div>
       </div>
     );
   }
