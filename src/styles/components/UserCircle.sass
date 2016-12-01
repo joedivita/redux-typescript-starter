@@ -1,6 +1,50 @@
 #user-circle-dropdown
   .ant-dropdown-menu
-    margin-left: -73px
+    margin-left: -128px
+    border-radius: 0
+    margin-top: 6px
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1)
+    font-size: 18px
+
+    li
+      padding: 15px 40px
+
+    li.ant-dropdown-menu-item-divider
+      padding: 0px
+
+    li a
+      font-size: 12px
+
+    .ant-dropdown-menu-item
+      border-radius: 0
+
+  .ant-dropdown-menu::before
+    display: block
+    position: absolute
+    right: 10px
+    vertical-align: middle
+    content: ""
+    width: 0
+    height: 0
+    top: -10px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 9px solid rgba(57,70,78,.15);
+    border-style: none double solid;
+
+  .ant-dropdown-menu::after
+    display: block;
+    position: absolute;
+    right: 10px;
+    vertical-align: middle;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -9px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 9px solid #fff;
+    border-style: none double solid;
 
 .user-circle
   height: 35px
