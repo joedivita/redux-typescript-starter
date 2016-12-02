@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Menu, Icon, Badge } from 'antd';
+import { Menu, Icon, Badge, Tooltip } from 'antd';
 
 interface IProps {}
 
@@ -7,25 +7,36 @@ class Aside extends React.Component<IProps, any> {
   render(): JSX.Element {
     return (
       <div className='aside'>
-        <h4>Navigation</h4>
-        <Menu mode='inline' style={{ width: 190 }}>
+        <Menu mode='inline' style={{ width: 70 }}>
+          <Menu.Item key='sub0'>
+            <span className='logo'><Icon type='chrome'/></span>
+          </Menu.Item>
           <Menu.Item key='sub1'>
-            <span><Icon type='appstore-o'/><span> Dashboard</span></span>
+            <Tooltip placement='right' title={'Dashboard'}>
+              <span><Icon type='appstore-o'/></span>
+            </Tooltip>
           </Menu.Item>
           <Menu.Item key='sub2'>
-            <span><Icon type='folder'/><span> Folders</span></span>
+            <Tooltip placement='right' title={'Folders'}>
+              <span><Icon type='folder'/></span>
+            </Tooltip>
           </Menu.Item>
           <Menu.Item key='sub3'>
-            <span><Icon type='code-o'/><span> Query</span></span>
+            <Tooltip placement='right' title={'Query'}>
+              <span><Icon type='code-o'/></span>
+            </Tooltip>
           </Menu.Item>
           <Menu.Item key='sub4'>
-            <span><Icon type='line-chart'/><span> Reports</span></span>
+            <Tooltip placement='right' title={'Reports'}>
+              <span><Icon type='line-chart'/></span>
+            </Tooltip>
           </Menu.Item>
           <Menu.Item key='sub5'>
-            <span>
-              <Icon type='message'/><span> Notifications </span>
-              <Badge count={5000}></Badge>
-            </span>
+            <Tooltip placement='right' title={'Notifications'}>
+              <span>
+                <Icon type='message'/>
+              </span>
+            </Tooltip>
           </Menu.Item>
         </Menu>
       </div>

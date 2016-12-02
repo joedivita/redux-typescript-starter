@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Menu, Row, Col, Icon } from 'antd';
+import { Menu, Row, Col, Icon, Input } from 'antd';
 import { UserCircle } from './UserCircle';
 
 const SubMenu = Menu.SubMenu;
@@ -35,10 +35,15 @@ class Header extends React.Component<IProps, any> {
     return (
       <div className='header'>
         <Row>
-          <Col xs={{ span: 24 }} md={{ span: 12 }} >
-            <p>Logo</p>
+          <Col xs={{ span: 24 }} md={{ span: 0 }}>
+            <p className='text-center logo'>Logo</p>
           </Col>
-          <Col xs={{ span: 0 }} md={{ span: 12 }} >
+          <Col xs={{ span: 0 }} md={{ span: 6 }}>
+          </Col>
+          <Col xs={{ span: 0 }} md={{ span: 12 }}>
+            <Input.Search placeholder='Search for anything...' />
+          </Col>
+          <Col xs={{ span: 0 }} md={{ span: 6 }}>
             <UserCircle letter={'J'} menu={this.userMenu()} />
           </Col>
         </Row>
