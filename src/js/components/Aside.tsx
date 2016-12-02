@@ -34,7 +34,9 @@ class Aside extends React.Component<IProps, any> {
           <Menu.Item key='sub5'>
             <Tooltip placement='right' title={'Notifications'}>
               <span>
-                <Icon type='message'/>
+                <Badge dot={true} count={0}>
+                  <Icon type='message'/>
+                </Badge>
               </span>
             </Tooltip>
           </Menu.Item>
