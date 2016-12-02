@@ -1,6 +1,6 @@
 .header
   transition: opacity 0.5s
-  background: #0288d1
+  background: $primaryBeta
   height: 55px
   padding: 0 25px
   width: 100%
@@ -9,7 +9,7 @@
   z-index: 10
 
   .logo
-    color: #fff
+    color: $whiteAlpha
     font-size: 20px
 
   .ant-input-search-wrapper
@@ -26,11 +26,11 @@
   input
     width: 400px
     border-radius: 2px
-    border-color: #039be5
+    border-color: $primaryGamma
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12)
-    color: #ffffff
+    color: $whiteAlpha
     height: 40px
-    background: #039be5
+    background: $primaryGamma
     margin: 0 auto
     display: block
     position: relative
@@ -39,15 +39,10 @@
     font-weight: 200
     font-size: 13px
 
-  input:focus
+  input:focus, input:hover
     outline: none
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12)
-    border-color: #039be5
-
-  input:hover
-    outline: none
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12)
-    border-color: #039be5
+    border-color: $primaryGamma
 
   input::-webkit-input-placeholder
     color: rgba(255, 255, 255, 0.8)
