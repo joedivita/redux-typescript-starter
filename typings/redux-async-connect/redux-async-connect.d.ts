@@ -1,5 +1,5 @@
 /// <reference path="../redux/redux.d.ts" />
-/// <reference path="../react-router/history.d.ts" />
+/// <reference types="react-router" />
 
 declare module 'redux-async-connect' {
   export function asyncConnect(state: Object): ClassDecorator;
@@ -10,7 +10,7 @@ declare module 'redux-async-connect' {
   }
   export interface PromiseOptions {
     store: Redux.Store;
-    location: HistoryModule.Location;
+    location: Location;
     params: any;
   }
 }
